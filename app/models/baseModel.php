@@ -3,31 +3,58 @@ namespace App\Models;
 use PDO;
 use PDOException;
 
+class Database {
+    private static $instance = null;
+    private $connection;
+
+    private function __construct() {
+        try {
+            $dsn = DRIVER . ":host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
+            $this->connection = new PDO($dsn, USERNAME, PASSWORD);
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die("Error de conexión: " . $e->getMessage());
+        }
+    }
+
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection() {
+        return $this->connection;
+    }
+
+    private function __clone() {}
+    private function __wakeup() {}
+}
+
 abstract class BaseModel {
     protected $dbConnection;
     protected $table;
 
-    public function __construct(){
-        // Se genera la coneccion a la base de datos
-        $dbConfig = require_once MAIN_APP_ROUTE."../config/Database.php";
+    public function __construct()
+    {
         try {
-            $dsn = "{$dbConfig['driver']}:host={$dbConfig['host']};dbname={$dbConfig['database']}";
-            $this->dbConnection = new PDO($dsn, $dbConfig['username'], $dbConfig['password']);
-            $this->dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+            $this->dbConnection = Database::getInstance()->getConnection();
         } catch (PDOException $ex) {
             throw $ex;
         }
     }
-    public function getAll():array{
+
+    public function getAll(): array
+    {
         try {
             $sql = "SELECT * FROM $this->table";
-            $statement = $this->dbConnection->query($sql);  
-            //Obtenemos los datos en un array asociativo
-            $result = $statement->fetchAll(PDO::FETCH_OBJ);
-            return $result;
+            $statement = $this->dbConnection->query($sql);
+            $resul = $statement->fetchAll(PDO::FETCH_OBJ);
+            return $resul;
         } catch (PDOException $ex) {
             throw $ex;
         }
     }
 }
-?>
