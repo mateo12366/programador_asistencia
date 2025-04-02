@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F4FF;
+}
+
+footer, header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8F9FE;
+    color: #000;
+    text-align: center;
+    padding: 1rem; /* 16px */
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.sub-container {
+    padding: 10px;
+}
+
+.sub-container ul {
+    padding: 7px;
+}
