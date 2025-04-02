@@ -1,11 +1,11 @@
 <?php
 
 require_once '../app/config/global.php';
-//require_once '../app/controllers/homeController.php';
+require_once '../app/controller/homeController.php';
 
 
 $url = $_SERVER["REQUEST_URI"];
-$routeslist = require_once '../app/config/rutes.php';
+$routeslist = require_once '../app/config/routes.php';
 
 $matchedRoute = null;
 foreach ($routeslist as $route => $routeConfig) {

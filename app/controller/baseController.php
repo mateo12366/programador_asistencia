@@ -31,15 +31,11 @@ class BaseController
                 $$key = $value;
             }
         }
-        $content = /*MAIN_APP_ROUTE . */"../views/".$view;
-        $layout = /*MAIN_APP_ROUTE . */"../views/layouts/{$this->layout}.php";
+        $content = MAIN_APP_ROUTE . "../views/".$view;
+        $layout = MAIN_APP_ROUTE . "../views/layouts/{$this->layout}.php";
 
         include_once $layout;
         //require_once MAIN_APP_ROUTE."../views/".$view;
-    }
-    public function formatCurrency($amount)
-    {
-        return '$' . number_format($amount, 2);
     }
     public function redirectTo($url)
     {

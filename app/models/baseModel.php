@@ -9,7 +9,7 @@ abstract class BaseModel {
 
     public function __construct(){
         // Se genera la coneccion a la base de datos
-        $dbConfig = require_once /*MAIN_APP_ROUTE.*/"../config/Database.php";
+        $dbConfig = require_once MAIN_APP_ROUTE."../config/Database.php";
         try {
             $dsn = "{$dbConfig['driver']}:host={$dbConfig['host']};dbname={$dbConfig['database']}";
             $this->dbConnection = new PDO($dsn, $dbConfig['username'], $dbConfig['password']);
