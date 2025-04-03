@@ -7,33 +7,31 @@ use PDOException;
 
 require_once MAIN_APP_ROUTE . "../models/baseModel.php";
 
-class EntidadInstitucionModel extends BaseModel
+class CentroModel extends BaseModel
 {
     public function __construct(
         private ?int $id = null,
         private ?string $nombre = null,
-     
+        private ?int $id_regional = null
     ) {
-        //Se llama al constructor del padre
         parent::__construct();
-        //Se especifica la tabla
-        $this->table = " entidad_institucion";
+        $this->table = "centros";
     }
+
     public function save()
     {
         try {
-            //1. Se prepara la consulta
-            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (nombre) VALUES (?)");
-            //2. Se remplasan las variables con bindParam
+            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (nombre, id_regional) VALUES (?, ?)");
             $sql->bindParam(1, $this->nombre, PDO::PARAM_STR);
-            //3. Se ejecuta la consulta
+            $sql->bindParam(2, $this->id_regional, PDO::PARAM_INT);
             $res = $sql->execute();
             return $res;
         } catch (PDOException $ex) {
             echo "Error en consulta> " . $ex->getMessage();
         }
     }
-    public function getEntidadInstitucion()
+
+    public function getCentro()
     {
         try {
             $sql = "SELECT * FROM $this->table WHERE id=:id";
@@ -43,16 +41,17 @@ class EntidadInstitucionModel extends BaseModel
             $result = $statement->fetchAll(PDO::FETCH_OBJ);
             return $result;
         } catch (PDOException $ex) {
-            echo "Error al obtener la linea> " . $ex->getMessage();
+            echo "Error al obtener el centro> " . $ex->getMessage();
         }
     }
-    public function editEntidadInstitucion()
+
+    public function editCentro()
     {
         try {
-            $sql = "UPDATE $this->table SET nombre=:nombre WHERE id=:id";
+            $sql = "UPDATE $this->table SET nombre=:nombre, id_regional=:id_regional WHERE id=:id";
             $statement = $this->dbConnection->prepare($sql);
             $statement->bindParam(":nombre", $this->nombre, PDO::PARAM_STR);
-          
+            $statement->bindParam(":id_regional", $this->id_regional, PDO::PARAM_INT);
             $statement->bindParam(":id", $this->id, PDO::PARAM_INT);
             $resp = $statement->execute();
             return $resp;
@@ -62,7 +61,7 @@ class EntidadInstitucionModel extends BaseModel
         }
     }
 
-    public function deleteEntidadInstitucion()
+    public function deleteCentro()
     {
         try {
             $sql = "DELETE FROM $this->table WHERE id=:id";
@@ -71,7 +70,7 @@ class EntidadInstitucionModel extends BaseModel
             $resp = $statement->execute();
             return $resp;
         } catch (PDOException $ex) {
-            echo "El no pudo ser Eliminado " . $ex->getMessage();
+            echo "El registro no pudo ser Eliminado " . $ex->getMessage();
         }
     }
 }
