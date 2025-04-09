@@ -6,10 +6,10 @@ require_once '../app/controller/loginController.php';
 require_once '../app/controller/registerController.php';
 require_once '../app/controller/rolesController.php';
 
-require_once '../app/controller/claseController.php';
+
 require_once '../app/controller/coordinadorController.php';
 require_once '../app/controller/instructorController.php';
-require_once '../app/controller/superAdminController.php';
+
 
 
 
