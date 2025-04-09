@@ -3,6 +3,13 @@
 require_once '../app/config/global.php';
 require_once '../app/controller/homeController.php';
 
+require_once '../app/controller/claseController.php';
+require_once '../app/controller/coordinadorController.php';
+require_once '../app/controller/instructorController.phpp';
+require_once '../app/controller/superAdminController.php';
+
+
+
 
 $url = $_SERVER["REQUEST_URI"];
 $routeslist = require_once '../app/config/routes.php';

@@ -90,5 +90,19 @@ return [
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
 
+    
+    // Rutas  clase
+    '/clase/init' => ['controller' => 'App\Controller\ClaseController', 'action' => 'initClase'],
+
+    // Rutas  coordinador
+    '/coordinador/init' => ['controller' => 'App\Controller\CoordinadorController ', 'action' => 'initCoordinador'],
+
+    // Rutas  instructor
+    '/instructor/init' => ['controller' => 'App\Controller\InstructorController', 'action' => 'initInstructor'],
+
+    //// Rutas  Admin
+    '/SuperAdmin/init' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'initSuperAdmin'],
+
+
 ];
 ?>
