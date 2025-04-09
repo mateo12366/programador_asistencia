@@ -7,27 +7,23 @@ use PDOException;
 
 require_once MAIN_APP_ROUTE . "../models/baseModel.php";
 
-class AsistenciasModel extends BaseModel
+class AmbientesModel extends BaseModel
 {
     public function __construct(
         private ?int $id = null,
-        private ?int $idAprendiz = null,
-        private ?int $idClase = null,
-        private ?string $estado = null,
-        private ?string $horaInasistencia = null
+        private ?string $nombre = null,
+        private ?int $idCentro = null
     ) {
         parent::__construct();
-        $this->table = "asistencias";
+        $this->table = "ambientes";
     }
 
     public function save()
     {
         try {
-            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (idAprendiz, idClase, estado, horaInasistencia) VALUES (?, ?, ?, ?)");
-            $sql->bindParam(1, $this->idAprendiz, PDO::PARAM_INT);
-            $sql->bindParam(2, $this->idClase, PDO::PARAM_INT);
-            $sql->bindParam(3, $this->estado, PDO::PARAM_STR);
-            $sql->bindParam(4, $this->horaInasistencia, PDO::PARAM_STR);
+            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (nombre, idCentro) VALUES (?, ?)");
+            $sql->bindParam(1, $this->nombre, PDO::PARAM_STR);
+            $sql->bindParam(2, $this->idCentro, PDO::PARAM_INT);
             $res = $sql->execute();
             return $res;
         } catch (PDOException $ex) {
@@ -35,7 +31,7 @@ class AsistenciasModel extends BaseModel
         }
     }
 
-    public function getAsistencia()
+    public function getAmbiente()
     {
         try {
             $sql = "SELECT * FROM $this->table WHERE id=:id";
@@ -45,19 +41,17 @@ class AsistenciasModel extends BaseModel
             $result = $statement->fetchAll(PDO::FETCH_OBJ);
             return $result;
         } catch (PDOException $ex) {
-            echo "Error al obtener la asistencia> " . $ex->getMessage();
+            echo "Error al obtener el ambiente> " . $ex->getMessage();
         }
     }
 
-    public function editAsistencia()
+    public function editAmbiente()
     {
         try {
-            $sql = "UPDATE $this->table SET idAprendiz=:idAprendiz, idClase=:idClase, estado=:estado, horaInasistencia=:horaInasistencia WHERE id=:id";
+            $sql = "UPDATE $this->table SET nombre=:nombre, idCentro=:idCentro WHERE id=:id";
             $statement = $this->dbConnection->prepare($sql);
-            $statement->bindParam(":idAprendiz", $this->idAprendiz, PDO::PARAM_INT);
-            $statement->bindParam(":idClase", $this->idClase, PDO::PARAM_INT);
-            $statement->bindParam(":estado", $this->estado, PDO::PARAM_STR);
-            $statement->bindParam(":horaInasistencia", $this->horaInasistencia, PDO::PARAM_STR);
+            $statement->bindParam(":nombre", $this->nombre, PDO::PARAM_STR);
+            $statement->bindParam(":idCentro", $this->idCentro, PDO::PARAM_INT);
             $statement->bindParam(":id", $this->id, PDO::PARAM_INT);
             $resp = $statement->execute();
             return $resp;
@@ -67,7 +61,7 @@ class AsistenciasModel extends BaseModel
         }
     }
 
-    public function deleteAsistencia()
+    public function deleteAmbiente()
     {
         try {
             $sql = "DELETE FROM $this->table WHERE id=:id";

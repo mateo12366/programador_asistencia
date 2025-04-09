@@ -8,7 +8,7 @@ return [
         'controller' => 'App\Controller\HomeController',
         'action' => 'index',
     ],
-
+    
     // Rutas para Regionales
     '/regionales/init' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'initRegionales'],
     '/regionales/new' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'new'],
