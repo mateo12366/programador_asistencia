@@ -35,12 +35,12 @@ class UsuariosModel extends BaseModel
 
             if (count($resultSet) > 0) {
                 // Recuperamos de la BD, la contraseña encriptada
-                $hashed = $resultSet[0]->password;
+                $hashed = $resultSet[0]->contrasenia; // Changed from password to contrasenia
                 if (password_verify($password, $hashed)) {
                     //los datos de usuario y contraseña son correctos
-                    $_SESSION['rol'] = $resultSet[0]->FK_id_rol;
+                    $_SESSION['rol'] = $resultSet[0]->rol;
                     $_SESSION['nombre'] = $resultSet[0]->nombre;
-                    $_SESSION['id'] = $resultSet[0]->id_usuario;
+                    $_SESSION['id'] = $resultSet[0]->id;
                     $_SESSION['timeout'] = time();
                     session_regenerate_id();
                     return true;
@@ -48,8 +48,10 @@ class UsuariosModel extends BaseModel
                     return false;
                 }
             }
+            return false; // Added explicit return false if no user found
         } catch (PDOException $ex) {
             echo "Error validando login" . $ex->getMessage();
+            return false; // Added explicit return false on exception
         }
     }
 
