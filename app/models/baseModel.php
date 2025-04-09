@@ -9,7 +9,7 @@ class Database {
 
     private function __construct() {
         try {
-            $dsn = DRIVER . ":host=" . HOST . ";dbname=" . DATABASE . ";charset=" . CHARSET;
+            $dsn = DRIVER . ":host=" . HOST . ";dbname=" . DATABASE;
             $this->connection = new PDO($dsn, USERNAME, PASSWORD);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -29,8 +29,8 @@ class Database {
         return $this->connection;
     }
 
-    private function __clone() {}
-    private function __wakeup() {}
+    // private function __clone() {}
+    // private function __wakeup() {}
 }
 
 abstract class BaseModel {

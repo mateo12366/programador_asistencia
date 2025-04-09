@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Models\RolesModel;
 use Exception;
 
-require_once MAIN_APP_ROUTE . "../controllers/baseController.php";
+require_once MAIN_APP_ROUTE . "../controller/baseController.php";
 require_once MAIN_APP_ROUTE . "../models/rolesModel.php";
 
 class RolesController extends BaseController
@@ -40,6 +40,10 @@ class RolesController extends BaseController
     public function new()
     {
         $this->render('roles/newRol.php');
+    }
+    public function initCoordinador()
+    {
+        $this->render('coordinador/index.php');
     }
 
     public function create()

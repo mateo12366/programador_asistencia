@@ -38,7 +38,8 @@ return [
 
     // Rutas para ProgramaFormacion
     '/programaFormacion/init' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'initProgramaFormacion'],
-    '/programaFormacion/new' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'new'],
+    '/programaFormacion/view' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'viewProgramaFormacion'],
+    '/programaFormacion/new' => ['controller' => 'App\Controller\programaFormacionController', 'action' => 'new'],
     '/programaFormacion/create' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'create'],
     '/programaFormacion/view/(\d+)' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'view'],
     '/programaFormacion/edit/(\d+)' => ['controller' => 'App\Controller\ProgramaFormacionController', 'action' => 'editProgramaFormacion'],
@@ -90,5 +91,7 @@ return [
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
 
+    //Rutas Coordinadior
+    '/view/coordinador' => ['controller' => 'App\Controller\RolesController', 'action' => 'initCoordinador'],
 ];
 ?>

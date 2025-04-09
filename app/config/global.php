@@ -1,5 +1,5 @@
 <?php
-define("MAIN_APP_ROUTE", value: __DIR__ . "/../app/");
+define("MAIN_APP_ROUTE", __DIR__ . "/../app/");
 
 define("DRIVER", "mysql");
 define("HOST", "localhost");

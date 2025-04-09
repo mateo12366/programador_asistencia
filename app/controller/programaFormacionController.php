@@ -5,17 +5,17 @@ namespace App\Controller;
 use App\Models\ProgramasFormacionModel;
 use Exception;
 
-require_once MAIN_APP_ROUTE . "../controllers/baseController.php";
-require_once MAIN_APP_ROUTE . "../models/programasFormacionModel.php";
+require_once MAIN_APP_ROUTE . "../controller/baseController.php";
+require_once MAIN_APP_ROUTE . "../models/programaFormacionModel.php";
 
-class ProgramasFormacionController extends BaseController
+class ProgramaFormacionController extends BaseController
 {
     public function __construct()
     {
         $this->layout = 'programa_formacion_layout';
     }
 
-    public function initProgramasFormacion()
+    public function initProgramaFormacion()
     {
         try {
             $objPrograma = new ProgramasFormacionModel();
@@ -28,14 +28,39 @@ class ProgramasFormacionController extends BaseController
             $this->render("programa_formacion/viewProgramaFormacion.php", $data);
             
         } catch (Exception $e) {
-            error_log("Error in ProgramasFormacionController->initProgramasFormacion: " . $e->getMessage());
+            error_log("Error in ProgramaFormacionController->initProgramaFormacion: " . $e->getMessage());
             $data = [
                 'title' => 'Lista de Programas de Formación',
                 "programas" => [],
-                "error" => "Error al cargar los programas"
+                "error" => "Error al cargar los programas de formación"
             ];
+            $this->render("programa_formacion/viewProgramaFormacion.php", $data);
         }
     }
+
+    public function viewProgramaFormacion()
+    {
+        try {
+            $objPrograma = new ProgramasFormacionModel();
+            $programas = $objPrograma->getAll();
+            
+            $data = [
+                'title' => 'Lista de Programas de Formación',
+                "programas" => $programas,
+            ];
+            $this->render("programa_formacion/viewProgramaFormacion.php", $data);
+            
+        } catch (Exception $e) {
+            error_log("Error in ProgramaFormacionController->viewProgramaFormacion: " . $e->getMessage());
+            $data = [
+                'title' => 'Lista de Programas de Formación',
+                "programas" => [],
+                "error" => "Error al cargar los programas de formación"
+            ];
+            $this->render("programa_formacion/viewProgramaFormacion.php", $data);
+        }
+    }
+
 
     public function new()
     {
@@ -63,7 +88,7 @@ class ProgramasFormacionController extends BaseController
         $data = [
             "nombre" => $programaInfo[0]->nombre,
         ];
-        $this->render("programa_formacion/viewOneProgramaFormacion.php", $data);
+        $this->render("programa_formacion/viewProgramaFormacion.php", $data);
     }
 
     public function editProgramasFormacion($id)

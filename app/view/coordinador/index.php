@@ -12,7 +12,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <!-- Crear Programas -->
-      <a href="/programaFormacion/new" class="bg-white shadow-md rounded-lg p-4 flex items-center gap-4 hover:shadow-lg transition">
+      <a href="/view/programaFormacion" class="bg-white shadow-md rounded-lg p-4 flex items-center gap-4 hover:shadow-lg transition">
         <div class="bg-blue-500 text-white text-2xl p-3 rounded-full shadow-md">📚</div>
         <span class="text-base font-medium">Crear Programas</span>
       </a>
