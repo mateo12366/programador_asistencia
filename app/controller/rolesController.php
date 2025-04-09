@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Models\RolesModel;
 use Exception;
 
-require_once MAIN_APP_ROUTE . "../controllers/baseController.php";
+require_once MAIN_APP_ROUTE . "../controller/baseController.php";
 require_once MAIN_APP_ROUTE . "../models/rolesModel.php";
 
 class RolesController extends BaseController
@@ -20,13 +20,12 @@ class RolesController extends BaseController
         try {
             $objRol = new RolesModel();
             $roles = $objRol->getAll();
-            
+
             $data = [
                 'title' => 'Lista de Roles',
                 "roles" => $roles,
             ];
             $this->render("roles/viewRoles.php", $data);
-            
         } catch (Exception $e) {
             error_log("Error in RolesController->initRoles: " . $e->getMessage());
             $data = [
@@ -116,5 +115,12 @@ class RolesController extends BaseController
                 header('Location:/roles/init');
             }
         }
+    }
+
+    public function initSuperAdmin()
+    {
+        $this->layout = 'admin_layout';
+
+        $this->render("superAdmin/index.php");
     }
 }
