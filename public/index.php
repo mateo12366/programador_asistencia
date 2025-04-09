@@ -11,6 +11,7 @@ require_once '../app/controller/tomarListaController.php';
 
 require_once '../app/controller/coordinadorController.php';
 require_once '../app/controller/instructorController.php';
+require_once '../app/controller/regionalesController.php';
 
 
 

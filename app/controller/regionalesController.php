@@ -5,8 +5,8 @@ namespace App\Controller;
 use App\Models\RegionalModel;
 use Exception;
 
-require_once MAIN_APP_ROUTE . "../controllers/baseController.php";
-require_once MAIN_APP_ROUTE . "../models/regionalModel.php";
+require_once MAIN_APP_ROUTE . "../controller/baseController.php";
+require_once MAIN_APP_ROUTE . "../models/regionalesModel.php";
 
 class RegionalesController extends BaseController
 {
