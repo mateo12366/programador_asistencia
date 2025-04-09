@@ -9,6 +9,13 @@ require_once '../app/controller/VisualizarHorarioController.php';
 require_once '../app/controller/tomarListaController.php';
 
 
+require_once '../app/controller/coordinadorController.php';
+require_once '../app/controller/instructorController.php';
+
+
+
+
+
 $url = $_SERVER["REQUEST_URI"];
 $routeslist = require_once '../app/config/routes.php';
 
