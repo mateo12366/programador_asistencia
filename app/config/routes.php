@@ -1,22 +1,22 @@
 <?php
 return [
     '/' => [
-        'controller'=> 'App\Controller\HomeController',
-        'action'=> 'index',
+        'controller' => 'App\Controller\HomeController',
+        'action' => 'index',
     ],
-    '/home'=> [
-        'controller'=> 'App\Controller\HomeController',
-        'action'=> 'index',
+    '/home' => [
+        'controller' => 'App\Controller\HomeController',
+        'action' => 'index',
     ],
-    
-        // Rutas para Regionales
-        '/regionales/init' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'initRegionales'],
-        '/regionales/new' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'new'],
-        '/regionales/create' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'create'],
-        '/regionales/view/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'view'],
-        '/regionales/edit/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'editRegionales'],
-        '/regionales/update/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'updateRegionales'],
-        '/regionales/delete/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'deleteRegionales'],
+
+    // Rutas para Regionales
+    '/regionales/init' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'initRegionales'],
+    '/regionales/new' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'new'],
+    '/regionales/create' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'create'],
+    '/regionales/view/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'view'],
+    '/regionales/edit/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'editRegionales'],
+    '/regionales/update/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'updateRegionales'],
+    '/regionales/delete/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'deleteRegionales'],
 
     // Rutas para Centros
     '/centros/init' => ['controller' => 'App\Controller\CentrosController', 'action' => 'initCentros'],
@@ -90,19 +90,35 @@ return [
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
 
-    
+
     // Rutas  clase
-    '/clase/init' => ['controller' => 'App\Controller\ClaseController', 'action' => 'initClase'],
+    '/clase/init' => [
+        'controller' => 'App\Controller\ClaseController',
+        'action' => 'initClase',
+    ],
+    '/clase/edit/(\d+)' => ['controller' => 'App\Controller\ClaseController', 'action' => 'editClase'],
+    '/clase/update/(\d+)' => ['controller' => 'App\Controller\ClaseController', 'action' => 'updateClase'],
 
     // Rutas  coordinador
     '/coordinador/init' => ['controller' => 'App\Controller\CoordinadorController ', 'action' => 'initCoordinador'],
+    '/coordinador/edit/(\d+)' => ['controller' => 'App\Controller\CoordinadorController', 'action' => 'editCoordinador'],
+    '/coordinador/update/(\d+)' => ['controller' => 'App\Controller\CoordinadorController', 'action' => 'updateCoordinador'],
+
 
     // Rutas  instructor
     '/instructor/init' => ['controller' => 'App\Controller\InstructorController', 'action' => 'initInstructor'],
+    '/aprendiz/edit/(\d+)' => ['controller' => 'App\Controller\InstructorController', 'action' => 'editAprendiz'],
+    '/aprendiz/update/(\d+)' => ['controller' => 'App\Controller\InstructorController', 'action' => 'updateAprendizr'],
 
     //// Rutas  Admin
     '/SuperAdmin/init' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'initSuperAdmin'],
 
+    '/programa/edit/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'editPrograma'],
+    '/programa/update/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'updatePrograma'],
+
+    '/programa/edit/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'editPrograma'],
+    '/programa/update/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'updatePrograma'],
+
+
 
 ];
-?>

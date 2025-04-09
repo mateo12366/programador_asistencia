@@ -16,13 +16,14 @@ class  ClaseController extends BaseController
         $this->layout = "admin_layout";
         parent::__construct();
     }
+    
     public function initClase()
     {
-        $objClase = new ClaseModel();
-        $clase = $objClase->getAll();
-        $data = [
-            "clases" => $clase
-        ];
-        $this->render("clase/clase.php", $data);
+        // $objClase = new ClaseModel();
+        // $clase = $objClase->getAll();
+        // $data = [
+        //     "clases" => $clase
+        // ];
+        $this->render("clase/clase.php");
     }
 }

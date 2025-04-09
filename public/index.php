@@ -5,7 +5,7 @@ require_once '../app/controller/homeController.php';
 
 require_once '../app/controller/claseController.php';
 require_once '../app/controller/coordinadorController.php';
-require_once '../app/controller/instructorController.phpp';
+require_once '../app/controller/instructorController.php';
 require_once '../app/controller/superAdminController.php';
 
 
