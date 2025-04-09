@@ -95,5 +95,8 @@ return [
 
     // Ruta Registro
     '/register' => ['controller' => 'App\Controller\RegisterController', 'action' => 'register'],
+
+    '/superAdmin/init' => ['controller' => 'App\Controller\RolesController', 'action' => 'initSuperAdmin'],
+
 ];
 ?>
