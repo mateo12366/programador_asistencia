@@ -5,6 +5,8 @@ require_once '../app/controller/homeController.php';
 require_once '../app/controller/loginController.php';
 require_once '../app/controller/registerController.php';
 require_once '../app/controller/rolesController.php';
+require_once '../app/controller/VisualizarHorarioController.php';
+require_once '../app/controller/tomarListaController.php';
 
 
 $url = $_SERVER["REQUEST_URI"];

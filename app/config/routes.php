@@ -98,5 +98,14 @@ return [
 
     '/superAdmin/init' => ['controller' => 'App\Controller\RolesController', 'action' => 'initSuperAdmin'],
 
+    '/visualizar/horario' => [
+        'controller' => 'App\Controller\VisualizarHorarioController',
+        'action' => 'index'
+    ],
+    // Tomar Lista
+    '/lista/index' => [
+        'controller' => 'App\Controller\TomarListaController',
+        'action' => 'index'
+    ]
 ];
 ?>
