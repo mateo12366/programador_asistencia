@@ -1,0 +1,104 @@
+body {
+    background-color: #f0f2fa;
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid #d0d0d0;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+/* Tarjetas compactas rediseñadas */
+.card {
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 15px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    /* 👉 Esta línea es clave para ícono + texto en fila */
+    flex-direction: row;
+}
+
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Icono circular a la izquierda */
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Título a la derecha */
+.card-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Colores de iconos */
+.bg-light-blue {
+    background-color: #d0e8f2;
+    color: #4682b4;
+}
+
+.bg-purple {
+    background-color: #f0d0f0;
+    color: #9370db;
+}
+
+.bg-light-green {
+    background-color: #d0f0d0;
+    color: #4CAF50;
+}
+
+.bg-light-yellow {
+    background-color: #faf0d0;
+    color: #FFC107;
+}
+
+.bg-light-red {
+    background-color: #fad0d0;
+    color: #F44336;
+}
+
+.bg-light-blue-info {
+    background-color: #d0e0fa;
+    color: #2196F3;
+}
+
+.btn-purple {
+    background-color: rgb(182, 59, 182);
+    color: white;
+}
+
+/* Ajustes de grid para tarjetas más pequeñas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
