@@ -2,7 +2,8 @@
 
 require_once '../app/config/global.php';
 require_once '../app/controller/homeController.php';
-
+require_once '../app/controller/loginController.php';
+require_once '../app/controller/registerController.php';
 
 $url = $_SERVER["REQUEST_URI"];
 $routeslist = require_once '../app/config/routes.php';
