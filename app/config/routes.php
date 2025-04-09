@@ -90,8 +90,10 @@ return [
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
 
-    // Rutas para Super Admin
-    '/superAdmin/init' => ['controller' => 'App\Controller\RolesController', 'action' => 'initSuperAdmin'],
+    // Ruta login
+    '/login' => ['controller' => 'App\Controller\LoginController', 'action' => 'login'],
 
+    // Ruta Registro
+    '/register' => ['controller' => 'App\Controller\RegisterController', 'action' => 'register'],
 ];
 ?>
