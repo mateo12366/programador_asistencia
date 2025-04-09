@@ -9,14 +9,14 @@ return [
         'action'=> 'index',
     ],
     
-        // Rutas para Regionales
-        '/regionales/init' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'initRegionales'],
-        '/regionales/new' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'new'],
-        '/regionales/create' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'create'],
-        '/regionales/view/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'view'],
-        '/regionales/edit/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'editRegionales'],
-        '/regionales/update/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'updateRegionales'],
-        '/regionales/delete/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'deleteRegionales'],
+    // Rutas para Regionales
+    '/regionales/init' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'initRegionales'],
+    '/regionales/new' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'new'],
+    '/regionales/create' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'create'],
+    '/regionales/view/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'view'],
+    '/regionales/edit/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'editRegionales'],
+    '/regionales/update/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'updateRegionales'],
+    '/regionales/delete/(\d+)' => ['controller' => 'App\Controller\RegionalesController', 'action' => 'deleteRegionales'],
 
     // Rutas para Centros
     '/centros/init' => ['controller' => 'App\Controller\CentrosController', 'action' => 'initCentros'],
