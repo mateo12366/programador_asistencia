@@ -1,5 +1,10 @@
 <?php
-define("MAIN_APP_ROUTE", __DIR__."/../app/");
-// Tiempo inactividad dada en minutos
-// define('INACTIVE_TIME', 1);
-?>
+define("MAIN_APP_ROUTE", __DIR__ . "/../app/");
+
+define("DRIVER", "mysql");
+define("HOST", "localhost");
+define("DATABASE", "programador_asistencias");
+define("USERNAME", "root");
+define("PASSWORD", "");
+define("CHARSET", "uft8mb4");
+define("COLLATION", "utf8mb4_unicode_ci");
