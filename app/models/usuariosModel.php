@@ -21,6 +21,37 @@ class UsuariosModel extends BaseModel
         parent::__construct();
         $this->table = "usuarios";
     }
+    public function validarLogin($correo, $password)
+    {
+        try {
+            $sql = "SELECT * FROM usuarios WHERE correo=:correo";
+            $statement = $this->dbConnection->prepare($sql);
+            $statement->bindParam(":correo", $correo);
+            $statement->execute();
+            $resultSet = [];
+            while ($row = $statement->fetch(PDO::FETCH_OBJ)) {
+                $resultSet[] = $row;
+            }
+
+            if (count($resultSet) > 0) {
+                // Recuperamos de la BD, la contraseña encriptada
+                $hashed = $resultSet[0]->password;
+                if (password_verify($password, $hashed)) {
+                    //los datos de usuario y contraseña son correctos
+                    $_SESSION['rol'] = $resultSet[0]->FK_id_rol;
+                    $_SESSION['nombre'] = $resultSet[0]->nombre;
+                    $_SESSION['id'] = $resultSet[0]->id_usuario;
+                    $_SESSION['timeout'] = time();
+                    session_regenerate_id();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } catch (PDOException $ex) {
+            echo "Error validando login" . $ex->getMessage();
+        }
+    }
 
     public function save()
     {
