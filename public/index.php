@@ -2,6 +2,7 @@
 
 require_once '../app/config/global.php';
 require_once '../app/controller/homeController.php';
+require_once '../app/controller/visualizarHorarioController.php';
 
 
 $url = $_SERVER["REQUEST_URI"];

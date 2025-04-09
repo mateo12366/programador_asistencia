@@ -89,6 +89,10 @@ return [
     '/usuarios/edit/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'editUsuarios'],
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
-
+    // Visualizar Horarios
+    '/visualizar/horario' => [
+        'controller' => 'App\Controller\VisualizarHorarioController',
+        'action' => 'index'
+    ]
 ];
 ?>

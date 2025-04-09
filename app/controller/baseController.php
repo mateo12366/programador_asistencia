@@ -32,7 +32,7 @@ class BaseController
             }
         }
         $content = MAIN_APP_ROUTE . "../views/".$view;
-        $layout = MAIN_APP_ROUTE . "../views/layouts/{$this->layout}.php";
+        $layout = MAIN_APP_ROUTE . "../view/layouts/{$this->layout}.php";
 
         include_once $layout;
         //require_once MAIN_APP_ROUTE."../views/".$view;
