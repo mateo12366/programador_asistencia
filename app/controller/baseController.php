@@ -6,22 +6,22 @@ session_start();
 
 class BaseController
 {
-    protected string $layout = "dashboard_layout";
-    public function __construct()
-    {
-        /* Validar que el tiempo de inactividad del usuario no supere el tiempo
-           definido en la variable global INACTIVE_TIME */
-        // if (isset($_SESSION['timeout'])) {
-        //     // Calcula el tiempo de vida de la sesion
-        //     $tiempoSesion = time() - $_SESSION['timeout'];
-        //     if ($tiempoSesion > (INACTIVE_TIME * 60)) {
-        //         session_destroy();
-        //         header("Location:/login/logout");
-        //     } else {
-        //         $_SESSION['timeout'] = time();
-        //     }
-        // }
-    }
+     protected string $layout = "dashboard_layout";
+    // public function __construct()
+    // {
+    //     /* Validar que el tiempo de inactividad del usuario no supere el tiempo
+    //        definido en la variable global INACTIVE_TIME */
+    //     // if (isset($_SESSION['timeout'])) {
+    //     //     // Calcula el tiempo de vida de la sesion
+    //     //     $tiempoSesion = time() - $_SESSION['timeout'];
+    //     //     if ($tiempoSesion > (INACTIVE_TIME * 60)) {
+    //     //         session_destroy();
+    //     //         header("Location:/login/logout");
+    //     //     } else {
+    //     //         $_SESSION['timeout'] = time();
+    //     //     }
+    //     // }
+    // }
     
     public function render($view, $data = null)
     {

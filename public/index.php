@@ -2,6 +2,9 @@
 
 require_once '../app/config/global.php';
 require_once '../app/controller/homeController.php';
+require_once '../app/controller/loginController.php';
+require_once '../app/controller/registerController.php';
+require_once '../app/controller/rolesController.php';
 
 require_once '../app/controller/claseController.php';
 require_once '../app/controller/coordinadorController.php';

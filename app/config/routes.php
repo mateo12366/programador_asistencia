@@ -90,30 +90,13 @@ return [
     '/usuarios/update/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'updateUsuarios'],
     '/usuarios/delete/(\d+)' => ['controller' => 'App\Controller\UsuariosController', 'action' => 'deleteUsuarios'],
 
+    // Ruta login
+    '/login' => ['controller' => 'App\Controller\LoginController', 'action' => 'login'],
 
-    // Rutas  clase
-    '/clase/init' => [
-        'controller' => 'App\Controller\ClaseController',
-        'action' => 'initClase',
-    ],
-    '/clase/edit/(\d+)' => ['controller' => 'App\Controller\ClaseController', 'action' => 'editClase'],
-    '/clase/update/(\d+)' => ['controller' => 'App\Controller\ClaseController', 'action' => 'updateClase'],
+    // Ruta Registro
+    '/register' => ['controller' => 'App\Controller\RegisterController', 'action' => 'register'],
 
-    // Rutas  coordinador
-    '/coordinador/init' => ['controller' => 'App\Controller\CoordinadorController ', 'action' => 'initCoordinador'],
-    '/coordinador/edit/(\d+)' => ['controller' => 'App\Controller\CoordinadorController', 'action' => 'editCoordinador'],
-    '/coordinador/update/(\d+)' => ['controller' => 'App\Controller\CoordinadorController', 'action' => 'updateCoordinador'],
-
-
-    // Rutas  instructor
-    '/instructor/init' => ['controller' => 'App\Controller\InstructorController', 'action' => 'initInstructor'],
-    '/aprendiz/edit/(\d+)' => ['controller' => 'App\Controller\InstructorController', 'action' => 'editAprendiz'],
-    '/aprendiz/update/(\d+)' => ['controller' => 'App\Controller\InstructorController', 'action' => 'updateAprendizr'],
-
-    //// Rutas  Admin
-    '/superAdmin/init' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'initSuperAdmin'],
-
-
-
+    '/superAdmin/init' => ['controller' => 'App\Controller\RolesController', 'action' => 'initSuperAdmin'],
 
 ];
+?>
