@@ -111,13 +111,8 @@ return [
     '/aprendiz/update/(\d+)' => ['controller' => 'App\Controller\InstructorController', 'action' => 'updateAprendizr'],
 
     //// Rutas  Admin
-    '/SuperAdmin/init' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'initSuperAdmin'],
+    '/superAdmin/init' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'initSuperAdmin'],
 
-    '/programa/edit/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'editPrograma'],
-    '/programa/update/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'updatePrograma'],
-
-    '/programa/edit/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'editPrograma'],
-    '/programa/update/(\d+)' => ['controller' => 'App\Controller\SuperAdminController', 'action' => 'updatePrograma'],
 
 
 
