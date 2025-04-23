@@ -27,20 +27,20 @@
     }
 
     .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .modal-title {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 0;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .modal-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+      }
+      
 
     .close-button {
       background: none;
@@ -80,14 +80,19 @@
     }
 
     .time-group {
-      display: flex;
-      gap: 20px;
-    }
-
-    .time-input {
-      flex: 1;
-    }
-
+        display: flex;
+        gap: 20px;
+      }
+      
+      .time-group .form-group {
+        flex: 1;
+      }
+      
+      .time-group input {
+        font-size: 16px;
+        padding: 12px;
+      }
+      
     .time-input input {
       padding-left: 32px;
     }
@@ -150,8 +155,7 @@
       
       <div class="form-group">
         <label for="txtNombreComponente">Nombre de componente</label>
-        <select id="txtNombreComponente" name="txtNombreComponente" >
-        </select>
+        <input type="text" id="txtNombreComponente" name="txtNombreComponente">
       </div>
       
       <div class="form-group">
