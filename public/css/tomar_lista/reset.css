@@ -1,0 +1,58 @@
+/* Reset CSS Alternativo */
+
+/* Box-sizing y eliminación de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Reset para la tipografía y mejoras de legibilidad */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    text-rendering: optimizeSpeed;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Eliminación de estilos predeterminados en listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Enlaces sin subrayado y con color heredado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Imágenes fluidas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+Reset de formularios y botones */
+button, input, textarea, select {
+    font: inherit;
+    border: none;
+    background: transparent;
+}
+
+/* Botones con puntero por defecto */
+button {
+    cursor: pointer;
+}
+
+/* Evita el cambio de estilo al enfocar */
+*:focus {
+    outline: none;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #ffffff;
+}
