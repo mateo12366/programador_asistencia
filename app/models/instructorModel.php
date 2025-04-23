@@ -19,6 +19,6 @@ class InstructorModel extends BaseModel
         //Se llama al constructor del padre
         parent::__construct();
         //Especifica la tabla
-        $this->table = "actividad";
+        $this->table = "asistencias";
     }
 }

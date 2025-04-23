@@ -44,12 +44,17 @@ class RegionalesController extends BaseController
 
     public function create()
     {
+        echo "7w7";
         $nombre = $_POST['nombre'] ?? null;
+        echo $nombre;
+        echo "UwU";
         if ($nombre) {
+            echo "OwO";
             $objRegional = new RegionalModel(null, $nombre);
+            echo "UnU";
             $resp = $objRegional->save();
             if ($resp) {
-                header('Location:/regionales/init');
+                header('Location:/superAdmin/init');
             } else {
                 header('Location:/regionales/init');
             }

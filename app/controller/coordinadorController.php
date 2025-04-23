@@ -14,7 +14,6 @@ class  CoordinadorController extends BaseController
     public function __construct()
     {
         $this->layout = "admin_layout";
-        parent::__construct();
     }
     public function initCoordinador()
     {
@@ -23,6 +22,6 @@ class  CoordinadorController extends BaseController
         $data = [
             "coordinador" => $coordinador
         ];
-        $this->render("coordinador/coordinador.php", $data);
+        $this->render("coordinador/index.php", $data);
     }
 }

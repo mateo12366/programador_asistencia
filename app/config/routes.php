@@ -106,6 +106,16 @@ return [
     '/lista/index' => [
         'controller' => 'App\Controller\TomarListaController',
         'action' => 'index'
+    ],
+    // Rutas coordinador
+    '/view/coordinador' => [
+        'controller' => 'App\Controller\CoordinadorController',
+        'action' => 'initCoordinador'
+    ],
+    // Rutas instructor
+    '/view/instructor' => [
+        'controller' => 'App\Controller\instructorController',
+        'action' => 'initInstructor'
     ]
 ];
 ?>

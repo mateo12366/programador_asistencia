@@ -6,5 +6,5 @@ define("HOST", "localhost");
 define("DATABASE", "programador_asistencias");
 define("USERNAME", "root");
 define("PASSWORD", "");
-define("CHARSET", "uft8mb4");
+define("CHARSET", "utf8mb4");
 define("COLLATION", "utf8mb4_unicode_ci");

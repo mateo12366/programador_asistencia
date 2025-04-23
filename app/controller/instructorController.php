@@ -14,7 +14,6 @@ class  InstructorController extends BaseController
     public function __construct()
     {
         $this->layout = "admin_layout";
-        parent::__construct();
     }
     public function initInstructor()
     {
@@ -23,6 +22,6 @@ class  InstructorController extends BaseController
         $data = [
             "instructor" => $Instructor
         ];
-        $this->render("instructor/instructor.php", $data);
+        $this->render("instructor/index.php", $data);
     }
 }
