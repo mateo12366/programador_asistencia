@@ -18,7 +18,8 @@ class ClasesModel extends BaseModel
         private ?string $Competencia = null,
         private ?int $FkIdAmbiente = null,
         private ?int $FkIdInstructor = null,
-        private ?int $FkIdFicha = null
+        private ?int $FkIdFicha = null,
+        private ?string $dia_semana = null
     ) {
         parent::__construct();
         $this->table = "clases";
@@ -27,7 +28,7 @@ class ClasesModel extends BaseModel
     public function save()
     {
         try {
-            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (nombre, fecha, hora_inicio, hora_fin, Competencia, FkIdAmbiente, FkIdInstructor, FkIdFicha) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql = $this->dbConnection->prepare("INSERT INTO $this->table (nombre, fecha, hora_inicio, hora_fin, Competencia, FkIdAmbiente, FkIdInstructor, FkIdFicha, dia_semana) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $sql->bindParam(1, $this->nombre, PDO::PARAM_STR);
             $sql->bindParam(2, $this->fecha, PDO::PARAM_STR);
             $sql->bindParam(3, $this->hora_inicio, PDO::PARAM_STR);
@@ -36,6 +37,7 @@ class ClasesModel extends BaseModel
             $sql->bindParam(6, $this->FkIdAmbiente, PDO::PARAM_INT);
             $sql->bindParam(7, $this->FkIdInstructor, PDO::PARAM_INT);
             $sql->bindParam(8, $this->FkIdFicha, PDO::PARAM_INT);
+            $sql->bindParam(9, $this->dia_semana, PDO::PARAM_STR);
             $res = $sql->execute();
             return $res;
         } catch (PDOException $ex) {
@@ -60,7 +62,7 @@ class ClasesModel extends BaseModel
     public function editClase()
     {
         try {
-            $sql = "UPDATE $this->table SET nombre=:nombre, fecha=:fecha, hora_inicio=:hora_inicio, hora_fin=:hora_fin, Competencia=:Competencia, FkIdAmbiente=:FkIdAmbiente, FkIdInstructor=:FkIdInstructor, FkIdFicha=:FkIdFicha WHERE id=:id";
+            $sql = "UPDATE $this->table SET nombre=:nombre, fecha=:fecha, hora_inicio=:hora_inicio, hora_fin=:hora_fin, Competencia=:Competencia, FkIdAmbiente=:FkIdAmbiente, FkIdInstructor=:FkIdInstructor, FkIdFicha=:FkIdFicha, dia_semana=:dia_semana WHERE id=:id";
             $statement = $this->dbConnection->prepare($sql);
             $statement->bindParam(":nombre", $this->nombre, PDO::PARAM_STR);
             $statement->bindParam(":fecha", $this->fecha, PDO::PARAM_STR);
@@ -70,6 +72,7 @@ class ClasesModel extends BaseModel
             $statement->bindParam(":FkIdAmbiente", $this->FkIdAmbiente, PDO::PARAM_INT);
             $statement->bindParam(":FkIdInstructor", $this->FkIdInstructor, PDO::PARAM_INT);
             $statement->bindParam(":FkIdFicha", $this->FkIdFicha, PDO::PARAM_INT);
+            $statement->bindParam(":dia_semana", $this->dia_semana, PDO::PARAM_STR);
             $statement->bindParam(":id", $this->id, PDO::PARAM_INT);
             $resp = $statement->execute();
             return $resp;

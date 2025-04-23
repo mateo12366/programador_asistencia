@@ -8,7 +8,39 @@
     <link rel="stylesheet" href="/css/visualizar_horario/visualizar_horario.css">
     <title>Visualizar Horario</title>
     <style>
+        /* Estilos adicionales para el formulario de clase */
+        .clase-item {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 5px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
         
+        .clase-item p {
+            margin: 2px 0;
+        }
+        
+        .horario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+        
+        .btn-nueva-clase {
+            background-color: #009879;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .btn-nueva-clase:hover {
+            background-color: #007f67;
+        }
     </style>
 </head>
 
@@ -17,190 +49,9 @@
         <h1>Visualizar Horario</h1>
         <a href="">Cerrar Sesion</a>
     </header>
-    <div class="container">
-        <div class="hora">
-            <h3>Hora</h3>
-        </div>
-        <div class="dia">
-            <h3>Lunes</h3>
-        </div>
-        <div class="dia">
-            <h3>Martes</h3>
-        </div>
-        <div class="dia">
-            <h3>Miercoles</h3>
-        </div>
-        <div class="dia">
-            <h3>Jueves</h3>
-        </div>
-        <div class="dia">
-            <h3>Viernes</h3>
-        </div>
-        <div class="dia">
-            <h3>Sabado</h3>
-        </div>
-        
-        <div class="hora">
-            <h4>7:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>8:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>9:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>10:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>11:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>12:00 AM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>1:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>2:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>3:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>4:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>5:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>6:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>7:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>8:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>9:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-        <div class="hora">
-            <h4>10:00 PM</h4>
-        </div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-        <div class="dia"></div>
-
-    </div>
+    
+    <?php include_once $content; ?>
+    
 </body>
 
 </html>

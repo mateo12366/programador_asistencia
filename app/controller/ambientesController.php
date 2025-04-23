@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Models\AmbientesModel;
 use Exception;
 
-require_once MAIN_APP_ROUTE . "../controllers/baseController.php";
+require_once MAIN_APP_ROUTE . "../controller/baseController.php";
 require_once MAIN_APP_ROUTE . "../models/ambientesModel.php";
 
 class AmbientesController extends BaseController

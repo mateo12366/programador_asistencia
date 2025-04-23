@@ -53,7 +53,7 @@ return [
     '/fichas/edit/(\d+)' => ['controller' => 'App\Controller\FichasController', 'action' => 'editFichas'],
     '/fichas/update/(\d+)' => ['controller' => 'App\Controller\FichasController', 'action' => 'updateFichas'],
     '/fichas/delete/(\d+)' => ['controller' => 'App\Controller\FichasController', 'action' => 'deleteFichas'],
-
+    
     // Rutas para Clases
     '/clases/init' => ['controller' => 'App\Controller\ClasesController', 'action' => 'initClases'],
     '/clases/new' => ['controller' => 'App\Controller\ClasesController', 'action' => 'new'],
@@ -98,14 +98,28 @@ return [
 
     '/superAdmin/init' => ['controller' => 'App\Controller\RolesController', 'action' => 'initSuperAdmin'],
 
-    '/visualizar/horario' => [
+    '/horario' => [
         'controller' => 'App\Controller\VisualizarHorarioController',
         'action' => 'index'
     ],
     // Tomar Lista
-    '/lista/index' => [
+    '/lista' => [
         'controller' => 'App\Controller\TomarListaController',
         'action' => 'index'
+    ],
+
+
+    // Rutas para clases
+
+// Rutas para horario
+    '/horario/visualizar' => [
+        'controller' => 'HorarioController',
+        'action' => 'visualizar'
+    ],
+
+    '/horario/nuevaClase' => [
+        'controller' => 'HorarioController',
+        'action' => 'nuevaClase'
     ]
 ];
 ?>
